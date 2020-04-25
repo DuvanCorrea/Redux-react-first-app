@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from "react-redux"
 
 const Titulares = ({ titulares }) => (
@@ -8,8 +8,8 @@ const Titulares = ({ titulares }) => (
         <div className="cancha">
             {
                 titulares.map(t => (
-                    <article className="titular">
-                        <img src={t.foto} alt="no image" />
+                    <article className="titular" key={t.id}>
+                        <img src={t.foto} alt={t.foto} />
                         <h3>{t.nombre}</h3>
                         <div>
                             <button>Remover</button>

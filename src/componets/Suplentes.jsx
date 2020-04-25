@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from "react-redux"
 
 const Suplentes = ({ suplentes }) => (
@@ -8,8 +8,8 @@ const Suplentes = ({ suplentes }) => (
         <div className="banca">
             {
                 suplentes.map(s => (
-                    <article className="suplente">
-                        <img src={s.foto} alt="no image" />
+                    <article className="suplente" key={s.id}>
+                        <img src={s.foto} alt={s.foto} />
                         <h3>{s.nombre}</h3>
                         <div>
                             <button>Remover</button>

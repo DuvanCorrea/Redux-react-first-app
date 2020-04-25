@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Suplentes from './Suplentes'
 import Titulares from './Titulares'
 

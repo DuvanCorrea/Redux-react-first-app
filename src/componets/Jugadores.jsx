@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
+
 
 const Jugadores = ({ jugadores }) => (
     <section>
@@ -7,18 +8,18 @@ const Jugadores = ({ jugadores }) => (
         <div className="contenedor-jugadores">
             {
                 jugadores.map(j => (
-                    <article className="jugador">
-                        <img src={j.foto} alt="no image" />
+                    <article className="jugador" key={j.id}>
+                        <img src={j.foto} alt={j.foto} />
                         <h3>{j.nombre}</h3>
                         <div>
-                            <button onClick={() => agregarTitular(j)}>Titular</button>
+                            <button onClick={() => this.agregarTitular(j)}>Titular</button>
                             <button>Suplente</button>
                         </div>
                     </article>
                 ))
             }
         </div>
-    </section>
+    </section >
 )
 
 const mapStateToProps = state => ({
@@ -31,7 +32,7 @@ const mapDispatchToProps = dispatch => ({
             type: "AGREGAR_TITULAR",
             jugador
         })
-    }
+    },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jugadores);

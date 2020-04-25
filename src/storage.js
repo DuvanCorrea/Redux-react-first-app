@@ -3,10 +3,12 @@ import { createStore } from "redux";
 const initialState = {
   jugadores: [
     {
+      id: 1,
       nombre: "Raul",
       foto: "https://picsum.photos/70/80",
     },
     {
+      id: 2,
       nombre: "Pacho",
       foto: "https://picsum.photos/70/81",
     },
@@ -16,7 +18,7 @@ const initialState = {
 };
 
 const reducerEntrenador = (state = initialState, action) => {
-  console.log(action);
+  console.log(state);
   return state;
 };
 
